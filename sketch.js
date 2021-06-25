@@ -59,6 +59,8 @@ draw()
     let h = "Password:"
     fill(10)
     text(h,70,170,100,40)
+    let m = "Login"
+    text(m,170,350,100,40)
   } else if(scene3 == true){
     fill(100,100,100);
     rect(50,50,256,348)
