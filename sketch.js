@@ -1,9 +1,21 @@
+var scene1 = true;
+var scene2 = false;
+var scene3 = false;
+var scene4 = false;
+var scene5 = false;
 
 function setup() {
   createCanvas(windowHeight, windowWidth);
   textSize(10);
 }
-function draw(){
+
+function draw() {
+  background(0, 30, 40);
+
+
+  if (scene1 == true) {
+    // draw scene 1
+    function draw(){
   function homescreen(){
     rect(20,20,20,20)
     text("stuf",150,100)
@@ -32,8 +44,41 @@ function draw(){
     fill(0)
     let f = 'Sign in'
     text(f,167,307,190,40)
-
  }
  homescreen()
 }
 draw()
+
+  } else if (scene2 == true) {
+    // draw scene 2
+    fill(100,100,100);
+    rect(50,50,256,348)
+    let g = 'Username:'
+    fill(10)
+    text(g,70,150,100,40)
+    let h = "Password:"
+    fill(10)
+    text(h,70,170,100,40)
+  } else if(scene3 == true){
+    //
+		fill(0,150,40);
+    text("hi", 150, 200);
+  }
+
+}
+
+
+
+function mousePressed() {
+  if (scene1 == true) {
+    if (mouseX < width / 1) {
+      //do something
+      scene2 = true;
+    } else if (mouseX > width / 1) {
+      //do something else
+      scene3 = true;
+    }
+    // turn scene 1 off
+    scene1 = false;
+  }
+}
