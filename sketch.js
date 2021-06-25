@@ -2,12 +2,13 @@ var mgr;
 
 
 function setup() {
+  createCanvas(windowHeight, windowWidth);
+  textSize(10);
   mgr = new SceneManager()
   mgr.addScene(homescreen)
   mgr.addScene(loginPage)
   mgr.addScene(signInPage)
-  createCanvas(windowHeight, windowWidth);
-  textSize(10);
+
 
   mgr.showNextScene()
 }
@@ -25,7 +26,7 @@ function homescreen(){
     rect(50,50,256,30)
     fill(0)
     let s = 'Saving the planet one litter at a time';
-    texts, 70, 60, 250, 30);
+    text(s, 70, 60, 250, 30);
     let a = 'Sign up'
     text(a,70,100,290,40)
     let b = "Login"
