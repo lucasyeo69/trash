@@ -60,9 +60,18 @@ draw()
     fill(10)
     text(h,70,170,100,40)
   } else if(scene3 == true){
-    //
-		fill(0,150,40);
-    text("hi", 150, 200);
+    fill(100,100,100);
+    rect(50,50,256,348)
+    let i = 'Email:'
+    fill(10)
+    text(i,70,150,100,40)
+    let j = "Username:"
+    fill(10)
+    text(j,70,170,100,40)
+    let k = "Password:"
+    text(k,70,190,100,40)
+    let l = "Create account"
+    text(l,130,350,100,40)
   }
 
 }
@@ -71,10 +80,10 @@ draw()
 
 function mousePressed() {
   if (scene1 == true) {
-    if (mouseX < width / 1) {
+    if (mouseX < width / 2) {
       //do something
       scene2 = true;
-    } else if (mouseX > width / 1) {
+    } else if (mouseX > width / 2) {
       //do something else
       scene3 = true;
     }
