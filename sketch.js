@@ -19,6 +19,31 @@ function draw(){
   }
 
 function homescreen(){
+  this.setup = function(){
+    btn = createButton("Login")
+    btn.position(250,100)
+    btn.mousePressed(greet)
+
+    btn2 = createButton("Sign up")
+    btn2.position(70,100)
+    btn2.mousePressed(signIn)
+
+    btn3 = createButton("Sign in")
+    btn3.position(164,300)
+    btn3.mousePressed(greet)
+  }
+  function greet(){
+    mgr.showScene(loginPage)
+    btn.hide()
+    btn2.hide()
+    btn3.hide()
+  }
+  function signIn(){
+    mgr.showScene(signInPage)
+    btn2.hide()
+    btn.hide()
+    btn3.hide()
+  }
   this.draw = function(){
     fill(200)
     rect(50,50,256,348)
@@ -29,8 +54,6 @@ function homescreen(){
     text(s, 70, 60, 250, 30);
     let a = 'Sign up'
     text(a,70,100,290,40)
-    let b = "Login"
-    text(b,250,100,290,40)
     let c = 'HELP SAVE THE WORLD'
     text(c,70,150,100,40)
     let d = '            Submit your forms here'
@@ -40,13 +63,8 @@ function homescreen(){
     fill(0)
     let e = 'Email/Username'
     text(e,60,307,290,40)
-    fill(500)
-    rect(163,300,50,23)
-    fill(0)
-    let f = 'Sign in'
-    text(f,167,307,190,40)
-   }
- }
+  }
+}
 function loginPage(){
   this.draw = function(){
     fill(100,100,100);
@@ -79,4 +97,11 @@ function signInPage(){
     text(l,130,350,100,40)
   }
 
+}
+
+function userPage(){
+  this.draw = function(userPage){
+    fill(100,100,100);
+    rect()
+  }
 }
