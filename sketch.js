@@ -17,8 +17,6 @@ function draw() {
     // draw scene 1
     function draw(){
   function homescreen(){
-    rect(20,20,20,20)
-    text("stuf",150,100)
     fill(200)
     rect(50,50,256,348)
     fill(90)
@@ -50,7 +48,6 @@ function draw() {
 draw()
 
   } else if (scene2 == true) {
-    // draw scene 2
     fill(100,100,100);
     rect(50,50,256,348)
     let g = 'Username:'
