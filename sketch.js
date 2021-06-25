@@ -8,7 +8,7 @@ function setup() {
   mgr.addScene(homescreen)
   mgr.addScene(loginPage)
   mgr.addScene(signInPage)
-
+  mgr.addScene(forgotPassword)
 
   mgr.showNextScene()
 }
@@ -37,12 +37,14 @@ function homescreen(){
     btn.hide()
     btn2.hide()
     btn3.hide()
+    btn4.hide()
   }
   function signIn(){
     mgr.showScene(signInPage)
     btn2.hide()
     btn.hide()
     btn3.hide()
+    btn4.hide()
   }
   this.draw = function(){
     fill(200)
@@ -65,8 +67,20 @@ function homescreen(){
     text(e,60,307,290,40)
   }
 }
+
 function loginPage(){
-  this.draw = function(){
+  background(255,255,255)
+  btn4 = createButton("Forgot password?")
+  btn4.position(70,190)
+  btn4.mousePressed(email)
+  function email(){
+    btn.hide()
+    btn2.hide()
+    btn3.hide()
+    btn4.hide()
+    mgr.showScene(forgotPassword)
+  }
+    this.draw = function(){
     fill(100,100,100);
     rect(50,50,256,348)
     let g = 'Username:'
@@ -102,6 +116,32 @@ function signInPage(){
 function userPage(){
   this.draw = function(userPage){
     fill(100,100,100);
-    rect()
+    rect(50,50,256,348)
+  }
+}
+
+
+function forgotPassword(){
+  this.entry = function(){
+    background('white')
+   }
+  this.setup = function(){
+    var inp = createInput()
+    var but = createButton('submit')
+    inp.position(100,190)
+    but.position(200,300)
+    but.mousePressed(submitReq)
+    console.log(but)
+  }
+  function submitReq(){
+    var textinp = inp.value()
+    console.log(textinp)
+  }
+  this.draw = function(forgotPassword){
+    fill(100,100,100)
+    rect(50,50,256,348)
+    let o = "email:"
+    fill(0)
+    text(o,70,195,100,40)
   }
 }
