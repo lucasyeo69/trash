@@ -64,6 +64,11 @@ function homescreen(){
     btn3.hide()
     btn6.hide()
     btn9.hide()
+    btn4.show()
+    btn7.show()
+    btn10.show()
+    inp1.show()
+    inp2.show()
   }
   function signIn(){
     mgr.showScene(signInPage)
@@ -72,6 +77,7 @@ function homescreen(){
     btn3.hide()
     btn6.hide()
     btn9.hide()
+    btn5.show()
   }
   this.draw = function(){
     fill(200)
@@ -82,16 +88,14 @@ function homescreen(){
     textSize(10)
     textStyle(BOLD)
     let s = 'Saving the planet one litter at a time';
-    text(s, 90, 60, 250, 30);
-    let a = 'Sign up'
-    text(a,70,100,290,40)
+    text(s, 90, 60, 200, 30);
+    textSize(20)
     let c = 'HELP SAVE THE WORLD'
-    text(c,70,150,100,40)
-    let d = '                  Submit your forms here'
-    text(d,70,370,290,40)
+    text(c,70,150,100,100)
     fill(500)
     rect(50,300,113,23)
     fill(0)
+    textSize(10)
     let e = 'Email/Username'
     text(e,60,307,290,40)
   }
@@ -111,20 +115,44 @@ function loginPage(){
     btn4.style('background-color',col)
     btn4.position(70,190)
     btn4.mousePressed(email)
+    inp2 = createInput()
+    inp2.position(122,167)
+    btn10 = createButton("Back")
+    btn10.style('background',col)
+    btn10.position(230,350)
+    btn10.mousePressed(home)
+  }
+  function home(){
+    mgr.showScene(homescreen)
+    btn10.hide()
+    btn7.hide()
+    inp1.hide()
+    inp2.hide()
+    btn4.hide()
+    btn.show()
+    btn2.show()
+    btn3.show()
+    btn6.show()
+    btn9.show()
   }
   function hi(){
+    btn10.hide()
+    btn4.hide()
     btn7.hide()
-    btn5.hide()
-    var textinp1 = inp1.value()
-    console.log(textinp)
     mgr.showScene(userPage)
+    inp1.hide()
+    inp2.hide()
   }
 
   function email(){
+    btn10.hide()
     btn4.hide()
     btn7.hide()
     inp1.hide()
     mgr.showScene(forgotPassword)
+    inp2.hide()
+    but.show()
+    inp.show()
   }
     this.draw  = function(loginPage){
     fill(220,220,220);
@@ -153,6 +181,7 @@ function sentPage(){
     btn4.show()
     btn7.show()
     inp1.show()
+    inp2.show()
   }
   this.draw = function(sentPage){
     fill(220,220,220)
@@ -173,6 +202,8 @@ function signInPage(){
   function user(){
     btn5.hide()
     mgr.showScene(userPage)
+    inp1.hide()
+    inp2.hide()
   }
   this.draw = function(Signinpage){
     fill(220,220,220);
@@ -205,7 +236,7 @@ function forgotPassword(){
    }
   this.setup = function(){
     inp = createInput()
-    but = createButton('submit')
+    but = createButton('Submit')
     inp.position(100,190)
     but.position(200,300)
     let col = color(220,220,220)
@@ -215,7 +246,9 @@ function forgotPassword(){
   function submitReq(){
     but.hide()
     inp.hide()
+    inp2.hide()
     mgr.showScene(sentPage)
+    btn8.show()
   }
   this.draw = function(forgotPassword){
     fill(220,220,220)
@@ -232,5 +265,3 @@ function formPage(){
     rect(50,50,256,348)
   }
 }
-
-f
