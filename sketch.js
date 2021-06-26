@@ -31,20 +31,31 @@ function homescreen(){
     btn3 = createButton("Sign in")
     btn3.position(164,300)
     btn3.mousePressed(greet)
+
+    btn6 = createButton("Submit your forms here")
+    btn6.position(100,360)
+    btn6.mousePressed(form)
   }
+  function form(){
+    mgr.showScene(formPage)
+    btn.hide()
+    btn2.hide()
+    btn3.hide()
+    btn6.hide()
+    }
   function greet(){
     mgr.showScene(loginPage)
     btn.hide()
     btn2.hide()
     btn3.hide()
-
+    btn6.hide()
   }
   function signIn(){
     mgr.showScene(signInPage)
     btn2.hide()
     btn.hide()
     btn3.hide()
-    
+    btn6.hide()
   }
   this.draw = function(){
     fill(200)
@@ -52,13 +63,14 @@ function homescreen(){
     fill(90)
     rect(50,50,256,30)
     fill(0)
+    textSize(10)
     let s = 'Saving the planet one litter at a time';
-    text(s, 70, 60, 250, 30);
+    text(s, 90, 60, 250, 30);
     let a = 'Sign up'
     text(a,70,100,290,40)
     let c = 'HELP SAVE THE WORLD'
     text(c,70,150,100,40)
-    let d = '            Submit your forms here'
+    let d = '                  Submit your forms here'
     text(d,70,370,290,40)
     fill(500)
     rect(50,300,113,23)
@@ -69,10 +81,13 @@ function homescreen(){
 }
 
 function loginPage(){
-  background(255,255,255)
-  btn4 = createButton("Forgot password?")
-  btn4.position(70,190)
-  btn4.mousePressed(email)
+  this.setup = function(){
+    background(255,255,255)
+    btn4 = createButton("Forgot password?")
+    btn4.position(70,190)
+    btn4.mousePressed(email)
+  }
+
   function email(){
     btn.hide()
     btn2.hide()
@@ -80,7 +95,7 @@ function loginPage(){
     btn4.hide()
     mgr.showScene(forgotPassword)
   }
-    this.draw = function(){
+    this.draw  = function(){
     fill(100,100,100);
     rect(50,50,256,348)
     let g = 'Username:'
@@ -96,6 +111,15 @@ function loginPage(){
 }
 
 function signInPage(){
+  this.setup = function(){
+    btn5 = createButton('Create account')
+    btn5.position(120,350)
+    btn5.mousePressed(user)
+  }
+  function user(){
+    btn5.hide()
+    mgr.showScene(userPage)
+  }
   this.draw = function(Signinpage){
     fill(100,100,100);
     rect(50,50,256,348)
@@ -144,4 +168,10 @@ function forgotPassword(){
     fill(0)
     text(o,70,195,100,40)
   }
+}
+
+function formPage(){
+  fill(100,100,100)
+  rect(50,50,256,348)
+
 }
