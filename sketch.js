@@ -37,14 +37,14 @@ function homescreen(){
     btn.hide()
     btn2.hide()
     btn3.hide()
-    btn4.hide()
+
   }
   function signIn(){
     mgr.showScene(signInPage)
     btn2.hide()
     btn.hide()
     btn3.hide()
-    btn4.hide()
+    
   }
   this.draw = function(){
     fill(200)
