@@ -1,9 +1,16 @@
 var mgr;
-
+var img;
+function preload() {
+  img = loadImage('../assets/nature1.jpeg');
+  img2 = loadImage('../assets/sand.jpeg')
+  img3 = loadImage('../assets/wave.jpeg')
+  img4 = loadImage('../assets/account image.jpg')
+}
 
 
 
 function setup() {
+
   createCanvas(windowHeight, windowWidth);
   textSize(10);
   mgr = new SceneManager()
@@ -23,6 +30,7 @@ function draw(){
 
 function homescreen(){
   this.setup = function(){
+
     let col = color(220,220,220)
     btn = createButton("Login")
     btn.style('background-color',col)
@@ -53,6 +61,7 @@ function homescreen(){
     inp6 = createInput()
     inp6.position(70,300)
     inp6.size(100,18)
+
   }
   function form(){
     mgr.showScene(formPage)
@@ -87,11 +96,11 @@ function homescreen(){
     btn3.hide()
     btn6.hide()
     btn9.hide()
+    inp5.show()
     btn11.show()
     btn5.show()
     inp3.show()
     inp4.show()
-    inp5.show()
   }
   this.draw = function(){
     fill(200)
@@ -103,6 +112,7 @@ function homescreen(){
     textStyle(BOLD)
     let s = 'Saving the planet one litter at a time';
     text(s, 90, 60, 200, 30);
+    image(img, 50,80,256,318);
     textSize(20)
     let c = 'HELP SAVE THE WORLD'
     text(c,70,150,100,100)
@@ -237,10 +247,13 @@ function signInPage(){
     inp6.show()
   }
   function user(){
+    inp3.hide()
+    inp4.hide()
+    inp5.hide()
+    btn11.hide()
     btn5.hide()
+    but1.show()
     mgr.showScene(userPage)
-    inp1.hide()
-    inp2.hide()
   }
   this.draw = function(signInPage){
     fill(220,220,220);
@@ -256,16 +269,45 @@ function signInPage(){
     textSize(10)
     let k = "Password:"
     text(k,70,210,100,40)
-    let l = "Create account"
-    text(l,130,350,100,40)
   }
 
 }
 
 function userPage(){
+  this.setup = function(){
+    let col3 = color(255,255,255)
+    but1 = createButton("Log out")
+    but1.position(240,65)
+    but1.style('background-color',col3)
+    but1.mousePressed(ok)
+    fill(0)
+    let ac = "Photos you have submitted"
+    text(ac,70,130,150,80)
+
+  }
+  function ok(){
+    but1.hide()
+    mgr.showScene(loginPage)
+    inp1.show()
+    inp2.show()
+    btn7.show()
+    btn4.show()
+    btn10.show()
+
+  }
   this.draw = function(userPage){
     fill(220,220,220);
     rect(50,50,256,348)
+    fill(500)
+    rect(50,50,256,50)
+    image(img4,60,55,40,40)
+    fill(0)
+    textSize(15)
+    let ab = "Lucasyeo"
+    text(ab,110,60,150,80)
+    textSize(10)
+    let aa = "online"
+    text(aa,110,80,150,80)
   }
 }
 
@@ -315,6 +357,7 @@ function formPage(){
     inp7.hide()
     inp8.show()
     btn13.show()
+    btn16.show()
   }
   this.draw = function(formPage){
     fill(220,220,220)
@@ -334,16 +377,26 @@ function formPage(){
 function verifyPage(){
   this.setup = function(){
     inp8 = createInput()
-    inp8.position(140,290)
+    inp8.position(120,350)
     inp8.size(100,18)
     btn13 = createButton("Submit")
     let col = color(220,220,220)
     btn13.position(230,350)
     btn13.style('background-color',col)
     btn13.mousePressed(bruh)
+    btn16 = createButton("trash")
+    let col2 = color(0,139,139)
+    btn16.style('background-color',col2)
+    btn16.position(70,290)
+    btn16.mousePressed(why)
   }
+  function why(){
+    btn16.hide()
+  }
+
   function bruh(){
     mgr.showScene(successfulPage)
+    btn16.hide()
     btn13.hide()
     inp8.hide()
     inp7.hide()
@@ -362,16 +415,10 @@ function verifyPage(){
     let x = "human"
     text(x,150,100,150,80)
     textSize(10)
-    let y = "Write the word you see"
-    text(y,120,120,150,80)
-    textSize(36)
-    textFont('Georgia');
-    text('HELLO', 100, 250);
-    textSize(12)
-    textFont('Arial')
-    let w = "Word:"
-    text(w,100,295,150,80)
-
+    let w = "Click on the trash in the sea and count how many you clicked"
+    text(w,60,120,256,80)
+    image(img3,50,155,256,180)
+    image(img2,50,155,256,100)
 
 
   }
