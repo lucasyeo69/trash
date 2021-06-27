@@ -10,7 +10,7 @@ function preload() {
   img7 = loadImage('../assets/arrow.jpg')
   img8 = loadImage('../assets/daniel-olah-1nUNsmWfcSk-unsplash.jpg')
   img9 = loadImage('../assets/nature lol.jpeg')
-  img10 = loadImage('../assets/profile.jpeg')
+  img10 = loadImage('../assets/form.jpeg')
 }
 var btn
 var btn2
@@ -205,8 +205,8 @@ function homescreen(){
     btn6.hide()
     btn9.hide()
     inp6.hide()
-    inp7.show()
     btn12.show()
+    inp7.show()
     }
   function greet(){
     mgr.showScene(loginPage)
@@ -421,8 +421,8 @@ function formPage(){
   }
   this.draw = function(formPage){
     fill(220,220,220)
-    image(img10,50,50,256,348)
     rect(50,50,256,348)
+    image(img10,50,50,256,348)
     fill(0)
     textSize(13)
     let u = "Username:"
@@ -470,8 +470,8 @@ function verifyPage(){
 
   this.draw = function(verifyPage){
     fill(220,220,220)
-    image(img10,50,50,256,348)
     rect(50,50,256,348)
+    image(img10,50,50,256,348)
     fill(0)
     textSize(15)
     let z = "Verify if you are a "
@@ -519,6 +519,7 @@ function successfulPage(){
   this.draw = function(){
     fill(220,220,220)
     rect(50,50,256,348)
+    image(img10,50,50,256,348)
     fill(0)
     textSize(36)
     let v = "VERIFIED"
@@ -526,8 +527,7 @@ function successfulPage(){
     textSize(11)
     let u = "Form sent successfully"
     text(u,115,240,150,80)
-    image(img10,50,50,256,348)
-  }
+    }
 
 }
 
