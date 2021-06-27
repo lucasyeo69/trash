@@ -5,6 +5,7 @@ function preload() {
   img2 = loadImage('../assets/sand.jpeg')
   img3 = loadImage('../assets/wave.jpeg')
   img4 = loadImage('../assets/account image.jpg')
+  img5 = loadImage('../assets/form photo.jpeg')
 }
 
 
@@ -28,96 +29,7 @@ function draw(){
   mgr.draw()
   }
 
-function homescreen(){
-  this.setup = function(){
 
-    let col = color(220,220,220)
-    btn = createButton("Login")
-    btn.style('background-color',col)
-    btn.style('outline',0)
-    btn.position(250,90)
-    btn.mousePressed(greet)
-
-    btn2 = createButton("Sign up")
-    btn2.style('background-color',col)
-    btn2.position(60,90)
-    btn2.mousePressed(signIn)
-
-    btn3 = createButton("Sign in")
-    btn3.position(178,301)
-    btn3.style('background-color',col)
-    btn3.mousePressed(greet)
-
-    btn6 = createButton("Submit your forms here")
-    btn6.style('background-color',col)
-    btn6.position(100,360)
-    btn6.mousePressed(form)
-
-    btn9 = createButton("Guest user")
-    btn9.position(155,90)
-    btn9.style('background-color',col)
-    btn9.mousePressed(form)
-
-    inp6 = createInput()
-    inp6.position(70,300)
-    inp6.size(100,18)
-
-  }
-  function form(){
-    mgr.showScene(formPage)
-    btn.hide()
-    btn2.hide()
-    btn3.hide()
-    btn6.hide()
-    btn9.hide()
-    inp6.hide()
-    inp7.show()
-    btn12.show()
-    }
-  function greet(){
-    mgr.showScene(loginPage)
-    btn.hide()
-    btn2.hide()
-    btn3.hide()
-    btn6.hide()
-    btn9.hide()
-    inp6.hide()
-    btn4.show()
-    btn7.show()
-    btn10.show()
-    inp1.show()
-    inp2.show()
-  }
-  function signIn(){
-    mgr.showScene(signInPage)
-    btn2.hide()
-    inp6.hide()
-    btn.hide()
-    btn3.hide()
-    btn6.hide()
-    btn9.hide()
-    inp5.show()
-    btn11.show()
-    btn5.show()
-    inp3.show()
-    inp4.show()
-  }
-  this.draw = function(){
-    fill(200)
-    rect(50,50,256,348)
-    fill(150)
-    rect(50,50,256,30)
-    fill(0)
-    textSize(10)
-    textStyle(BOLD)
-    let s = 'Saving the planet one litter at a time';
-    text(s, 90, 60, 200, 30);
-    image(img, 50,80,256,318);
-    textSize(20)
-    let c = 'HELP SAVE THE WORLD'
-    text(c,70,150,100,100)
-  }
-}
 
 function loginPage(){
   this.setup = function(){
@@ -214,6 +126,102 @@ function sentPage(){
   }
 }
 
+function homescreen(){
+  this.setup = function(){
+
+    let col = color(220,220,220)
+    btn = createButton("Login")
+    btn.style('background-color',col)
+    btn.style('outline',0)
+    btn.position(250,90)
+    btn.mousePressed(greet)
+
+    btn2 = createButton("Sign up")
+    btn2.style('background-color',col)
+    btn2.position(60,90)
+    btn2.mousePressed(signIn)
+
+    btn3 = createButton("Sign in")
+    btn3.position(178,301)
+    btn3.style('background-color',col)
+    btn3.mousePressed(greet)
+
+    btn6 = createButton("Submit your forms here")
+    btn6.style('background-color',col)
+    btn6.position(100,360)
+    btn6.mousePressed(form)
+
+    btn9 = createButton("Guest user")
+    btn9.position(155,90)
+    btn9.style('background-color',col)
+    btn9.mousePressed(form)
+
+    inp6 = createInput()
+    inp6.position(70,300)
+    inp6.size(100,18)
+
+  }
+  function form(){
+    mgr.showScene(formPage)
+    btn.hide()
+    btn2.hide()
+    btn3.hide()
+    btn6.hide()
+    btn9.hide()
+    inp6.hide()
+    inp7.show()
+    btn12.show()
+    }
+  function greet(){
+    mgr.showScene(loginPage)
+    btn.hide()
+    btn2.hide()
+    btn3.hide()
+    btn6.hide()
+    btn9.hide()
+    inp6.hide()
+    btn4.show()
+    btn7.show()
+    btn10.show()
+    inp1.show()
+    inp2.show()
+  }
+  function signIn(){
+    mgr.showScene(signInPage)
+    btn2.hide()
+    inp6.hide()
+    btn.hide()
+    btn3.hide()
+    btn6.hide()
+    btn9.hide()
+    btn5 = createButton('Create account')
+    btn5.show()
+    inp3 = createInput()
+    inp3.show()
+    inp4 = createInput()
+    inp4.show()
+    inp5 = createInput()
+    inp5.show()
+    btn11 = createButton("Back")
+    btn11.show()
+  }
+  this.draw = function(){
+    fill(200)
+    rect(50,50,256,348)
+    fill(150)
+    rect(50,50,256,30)
+    fill(0)
+    textSize(10)
+    textStyle(BOLD)
+    let s = 'Saving the planet one litter at a time';
+    text(s, 90, 60, 200, 30);
+    image(img, 50,80,256,318);
+    textSize(20)
+    let c = 'HELP SAVE THE WORLD'
+    text(c,70,150,100,100)
+  }
+}
+
 function signInPage(){
   this.setup = function(){
     btn5 = createButton('Create account')
@@ -252,6 +260,7 @@ function signInPage(){
     inp5.hide()
     btn11.hide()
     btn5.hide()
+    but1 = createButton("Login page")
     but1.show()
     mgr.showScene(userPage)
   }
@@ -284,14 +293,20 @@ function userPage(){
     let ac = "Photos you have submitted"
     text(ac,70,130,150,80)
 
+
   }
   function ok(){
     but1.hide()
     mgr.showScene(loginPage)
+    inp1 = createInput()
     inp1.show()
+    inp2 = createInput()
     inp2.show()
+    btn7 = createButton('Login')
     btn7.show()
+    btn4 = createButton('Forgot password?')
     btn4.show()
+    btn10 = createButton('Back')
     btn10.show()
 
   }
@@ -308,6 +323,9 @@ function userPage(){
     textSize(10)
     let aa = "online"
     text(aa,110,80,150,80)
+    let ac = "Photos you have submitted"
+    text(ac,70,120,150,80)
+    image(img5,70,150,100,100)
   }
 }
 
@@ -350,6 +368,7 @@ function formPage(){
     btn12.position(230,350)
     btn12.style('background-color',col)
     btn12.mousePressed(submit)
+
   }
   function submit(){
     mgr.showScene(verifyPage)
@@ -371,6 +390,8 @@ function formPage(){
     textSize(15)
     let r = "FORM"
     text(r,150,70,150,80)
+    rect(99,169,102,102)
+    image(img5,100,170,100,100)
   }
 }
 
