@@ -6,8 +6,41 @@ function preload() {
   img3 = loadImage('../assets/wave.jpeg')
   img4 = loadImage('../assets/account image.jpg')
   img5 = loadImage('../assets/form photo.jpeg')
+  img6 = loadImage('../assets/plastic problem.jpeg')
+  img7 = loadImage('../assets/arrow.jpg')
+  img8 = loadImage('../assets/daniel-olah-1nUNsmWfcSk-unsplash.jpg')
+  img9 = loadImage('../assets/nature lol.jpeg')
+  img10 = loadImage('../assets/profile.jpeg')
 }
-
+var btn
+var btn2
+var btn3
+var btn4
+var btn5
+var btn6
+var btn7
+var btn8
+var btn9
+var btn10
+var btn11
+var btn12
+var btn13
+var btn14
+var btn15
+var btn16
+var but
+var but1
+var but2
+var but3
+var inp
+var inp1
+var inp2
+var inp3
+var inp4
+var inp5
+var inp6
+var inp7
+var inp8
 
 
 function setup() {
@@ -86,16 +119,19 @@ function loginPage(){
     inp.show()
   }
     this.draw  = function(loginPage){
+    image(img8,50,50,256,348)
     fill(220,220,220);
     rect(50,50,256,348)
+    image(img8,50,50,256,348)
     textSize(10)
     let g = 'Username:'
-    fill(10)
+    fill(500)
     text(g,70,150,100,40)
     textSize(10)
     let h = "Password:"
-    fill(10)
+    fill(500)
     text(h,70,170,100,40)
+
   }
 
 }
@@ -104,7 +140,7 @@ function sentPage(){
   this.setup = function(){
     btn8 = createButton("Back")
     btn8.position(150,350)
-    let col = color(220,220,220)
+    let col = color(0,0,0)
     btn8.style('background-color',col)
     btn8.mousePressed(troll)
   }
@@ -194,15 +230,10 @@ function homescreen(){
     btn3.hide()
     btn6.hide()
     btn9.hide()
-    btn5 = createButton('Create account')
     btn5.show()
-    inp3 = createInput()
     inp3.show()
-    inp4 = createInput()
     inp4.show()
-    inp5 = createInput()
     inp5.show()
-    btn11 = createButton("Back")
     btn11.show()
   }
   this.draw = function(){
@@ -267,13 +298,15 @@ function signInPage(){
   this.draw = function(signInPage){
     fill(220,220,220);
     rect(50,50,256,348)
+    image(img9,50,50,256,348)
     textSize(10)
+    fill(500)
     let i = 'Email:'
-    fill(10)
+    fill(500)
     text(i,70,150,100,40)
     textSize(10)
     let j = "Username:"
-    fill(10)
+    fill(500)
     text(j,70,180,100,40)
     textSize(10)
     let k = "Password:"
@@ -292,40 +325,48 @@ function userPage(){
     fill(0)
     let ac = "Photos you have submitted"
     text(ac,70,130,150,80)
-
-
+    but2 = createButton("Your profile")
+    but2.style('background-color',col3)
+    but2.position(80,350)
+    but2.mousePressed(tuf)
+  }
+  function tuf(){
+    but2.hide()
+    but1.hide()
+    mgr.showScene(profilePage)
+    but3.show()
   }
   function ok(){
     but1.hide()
+    but2.hide()
     mgr.showScene(loginPage)
     inp1 = createInput()
     inp1.show()
     inp2 = createInput()
     inp2.show()
-    btn7 = createButton('Login')
     btn7.show()
-    btn4 = createButton('Forgot password?')
     btn4.show()
-    btn10 = createButton('Back')
     btn10.show()
 
   }
   this.draw = function(userPage){
-    fill(220,220,220);
+    fill(255,255,255);
     rect(50,50,256,348)
     fill(500)
     rect(50,50,256,50)
     image(img4,60,55,40,40)
     fill(0)
     textSize(15)
-    let ab = "Lucasyeo"
+    let ab = "Johnteo"
     text(ab,110,60,150,80)
     textSize(10)
     let aa = "online"
     text(aa,110,80,150,80)
     let ac = "Photos you have submitted"
     text(ac,70,120,150,80)
-    image(img5,70,150,100,100)
+    image(img5,55,150,100,100)
+    image(img6,160,150,100,100)
+    image(img7,260,150,40,100)
   }
 }
 
@@ -380,6 +421,7 @@ function formPage(){
   }
   this.draw = function(formPage){
     fill(220,220,220)
+    image(img10,50,50,256,348)
     rect(50,50,256,348)
     fill(0)
     textSize(13)
@@ -428,6 +470,7 @@ function verifyPage(){
 
   this.draw = function(verifyPage){
     fill(220,220,220)
+    image(img10,50,50,256,348)
     rect(50,50,256,348)
     fill(0)
     textSize(15)
@@ -483,6 +526,34 @@ function successfulPage(){
     textSize(11)
     let u = "Form sent successfully"
     text(u,115,240,150,80)
+    image(img10,50,50,256,348)
   }
 
+}
+
+function profilePage(){
+  this.setup = function(){
+    but3 = createButton("Back")
+    let col3 = color(255,255,255)
+    but3.style('background-color',col3)
+    but3.position(220,360)
+    but3.mousePressed(final)
+  }
+  function final(){
+    but3.hide()
+    mgr.showScene(userPage)
+    but1.show()
+    but2.show()
+  }
+  this.draw = function(){
+  fill(255,255,255)
+  rect(50,50,256,348)
+  fill(0)
+  let ad = "Your username: Johnteo"
+  text(ad,60,180,150,100)
+  let ae = "Your password: Johnteo69"
+  text(ae,60,200,150,100)
+  image(img4,70,70,100,100)
+
+  }
 }
